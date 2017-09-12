@@ -17,14 +17,15 @@
         }
 
         $(document).ready(function () {
-            $("#load").bind("click", function () {
+            console.log($("#load"));
+            $("#load").on("click", function () {
                 var admin = "Admin";
                 $.ajax({
                     url: "content.php",
                     type: "POST",
                     data: ({name: admin, number: 5}),
                     dataType: "html",
-                    beforSend: funcBefore,
+                    beforeSend: funcBefore,
                     success: funcSuccess
                 });
             });
@@ -32,7 +33,7 @@
     </script>
 </head>
 <body>
-<p id="loader" style="cursor: pointer">Load data</p>
+<p id="load" style="cursor: pointer">Load data</p>
 <div id="information"></div>
 </body>
 </html>
